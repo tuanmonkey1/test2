@@ -1,0 +1,257 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper
+{
+    width: 100%;
+}
+.header-top
+{
+    position: fixed;
+    z-index: 100000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20%;
+    background-color: #169c2c;
+}
+.header-top .logo
+{
+    position: relative;
+    width: 102px;
+    margin-right: -200px;
+}
+.header-top .logo img
+{
+    width: 100%;
+    cursor: pointer;
+}
+.header-top .header-search-field
+{
+
+}
+.header-top .header-search-field #text-field
+{
+    width: 500px;
+    height: 35px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+.header-top .header-search-field #search-button
+{
+    width: 80px;
+    height: 35px;
+    padding: 5px 10px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+.header-top .header-top-link
+{
+    width: 150px;
+}
+.header-top .header-top-link ul
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-top .header-top-link ul li
+{
+    list-style: none;
+}
+.header-top .header-top-link ul li a
+{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+.header-top .header-top-link ul li a i
+{
+    color: #fff;
+    transform: scale(1.7);
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.header-top .header-top-link ul li a span
+{
+    color: #fff;
+    font-size: 14px;
+}
+.header
+{
+    position: absolute;
+    z-index: 10000;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    padding: 10px 20%;
+    background-color: #333;
+}
+.header .menu{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .menu li
+{
+    list-style: none;
+}
+.header .menu li a
+{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+.header .menu li a span
+{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.1s;
+}
+.header .menu li a:hover span
+{
+    background-color: transparent;
+    color: #808080;
+}
+.container
+{
+    margin-top: 110px;
+    width: 100%;
+    background-color: #f3f3f3;
+    padding: 0 20%;
+    min-height: 100vh;
+}
+.footer
+{
+    background-color: #fff;
+    width: 100%;
+    padding: 0 20%;
+}
+.footer .footer-container
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+.footer .footer-container > li
+{
+    list-style: none;
+}
+.footer .footer-container > li .footer-content
+{
+    
+}
+.footer .footer-container > li .footer-content li
+{
+    list-style: none;
+    margin-bottom: 15px;
+    width: 180px;
+}
+.footer .footer-container > li .footer-content li a
+{
+    text-decoration: none;
+    color: #3399d2;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.footer .footer-container > li .footer-contact
+{
+    width: 450px;
+}
+.footer .footer-container > li .footer-contact .phone-contact
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer .footer-container > li .footer-contact .phone-contact li
+{
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #333333;
+}
+.footer .footer-container > li .footer-contact .phone-contact li span
+{
+    font-size: 22px;
+    color: #d0021b;
+    font-weight: bolder;
+    line-height: 40px;
+}
+.footer .footer-container > li .footer-contact .footer-payment
+{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.footer .footer-container > li .footer-contact .footer-payment li
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    list-style: none;
+    margin-right: 40px;
+}
+.footer .footer-container > li .footer-contact .footer-payment li .footer-paymentBx
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+.footer .footer-container > li .footer-contact .footer-payment li .footer-paymentBx li
+{
+    list-style: none;
+    margin-right: 10px;
+}
+.footer .footer-container > li .footer-contact .footer-payment li .footer-paymentBx li img
+{
+    width: 44px;
+    height: 27px;
+}
+.footer .footer-container > li .footer-contact .footer-payment li a
+{
+    text-decoration: none;
+}
+.footer-end
+{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    background-color: #f3f3f3;
+    padding-top: 10px;
+}
+.footer-end p
+{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
