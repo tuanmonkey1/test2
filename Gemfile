@@ -6,8 +6,8 @@ gem 'sass-rails', '5.1.0'
 gem 'webpacker', '4.0.7'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder', '2.9.1'
-gem 'bootsnap', '1.4.4', require: false
-group :development, :test do
+gem 'bootsnap', '1.4.4', require: fals
+egroup :development, :test do
 gem 'mysql2'
 gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
