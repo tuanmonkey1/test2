@@ -7,7 +7,7 @@ gem 'webpacker', '4.0.7'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder', '2.9.1'
 gem 'bootsnap', '1.4.4', require: false
-egroup :development, :test do
+group :development, :test do
 gem 'mysql2'
 gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
