@@ -7,6 +7,16 @@ gem 'webpacker', '4.0.7'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder', '2.9.1'
 gem 'bootsnap', '1.4.4', require: false
+gem 'figaro'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-instagram'
+gem 'twitter'
+gem 'instagram'
+gem 'omniauth-google-oauth2'
+# gem 'google-api-client', require: 'google/api_client'
 group :development, :test do
 gem 'mysql2'
 gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
