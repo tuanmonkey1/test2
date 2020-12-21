@@ -2,14 +2,10 @@
 
 one:
   title: MyString
-  distribute: 1
-  content: MyText
-  price: 
-  brand: MyText
+  description: MyText
+  model: one
 
 two:
   title: MyString
-  distribute: 1
-  content: MyText
-  price: 
-  brand: MyText
+  description: MyText
+  model: two
