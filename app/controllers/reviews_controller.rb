@@ -4,27 +4,16 @@ class ReviewsController < ApplicationController
 	#before_action :correct_user, only: :destroy
 
 	def new
-	    @review = current_user.reviews.build
-	    @feed_items = current_user.feed.paginate(page: params[:page]).per_page(10)
-
-	    @q = Hashtag.ransack(params[:q])
-		@hashtags = @q.result.paginate(page: params[:page])
-		#end
-		respond_to do |format|
-			format.html {}
-			format.json
-		end
+		@review = Review.new
 	end
 
 	def create
-	  @review = current_user.reviews.build(review_params)
-	  @review.image.attach(params[:review][:image])
+		@review = Review.new(review_params)
       if @review.save
         flash[:success] = "Review created!"
         redirect_to reviews_url
       else
-      	@feed_items = current_user.feed.paginate(page: params[:page]).per_page(10)
-        render 'reviews'
+        render 'new'
       end
 	end
 
@@ -49,14 +38,9 @@ class ReviewsController < ApplicationController
 	def index
 		#@review = current_user.reviews.build
 		#if params[:auto]
-			@reviews = Review.where(title: params[:title])	
-		#else
-			@q = Review.ransack(params[:q])
-			@reviews = @q.result.paginate(page: params[:page])
-		#end
-		respond_to do |format|
-			format.html {}
-			format.json
+		@reviews = Review.all
+		if params[:title] && !params[:title].empty?
+			@reviews = Review.search_review(params[:title].downcase)
 		end
 	end
 

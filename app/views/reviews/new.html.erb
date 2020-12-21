@@ -1,6 +1,22 @@
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <div class="review-form-wrapper">
 	<h1><%= t('form.submit.create_review') %></h1>
 	<div class="review-form-content">
-    	<%= render 'shared/review_form' %>
+	<%= form_for(@review) do |f| %>
+		<div class="field">
+		  <%= f.label t('form.label.title') %>
+		  <%= f.text_field :title, placeholder: "Title..." , id: "title" %>
+	  
+		  <%= f.label t('form.label.description') %>
+		  <%= f.text_area :description, placeholder: "Compose descritpion..." , id: "content" %>
+		
+		  <%= f.label t('form.label.content') %>
+		  <%= f.text_area :content, placeholder: "Compose content..." , id: "content" %>  
+	  
+		</div>
+		
+		<%= f.submit t('form.submit.submit'), class: "submit" %>
+	  
+	  <% end %>
     </div>
 </div>
