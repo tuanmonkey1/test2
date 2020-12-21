@@ -37,14 +37,14 @@ class ReviewsController < ApplicationController
 	def show
 	  @review = Review.find(params[:id])
 	  @user = @review.user
-	  @comments = @review.comments
-	  @comment = Comment.new
-	  @rate = Rate.new
+	#   @comments = @review.comments
+	#   @comment = Comment.new
+	#   @rate = Rate.new
 	end
 	
-	def rate
-    	@review = Review.find(params[:id])
-	end
+	# def rate
+    	# @review = Review.find(params[:id])
+	# end
 
 	def index
 		#@review = current_user.reviews.build
@@ -63,7 +63,7 @@ class ReviewsController < ApplicationController
 	private
 
 	  def review_params
-		params.require(:review).permit(:title,:description, :content, :image, hashtag_ids: [])
+		params.require(:review).permit(:title,:description, :content)
       end
 
       def correct_user

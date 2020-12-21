@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def full_title(page_title = '')
-		base_title = "64 Audio"
+		base_title = "Tuan Monkey "
 		if page_title.empty?
 			base_title
 		else

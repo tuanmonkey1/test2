@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.create!(admin: true,
+email: "admin@gmail.com",
+password: "123456",
+password_confirmation: "123456")
 Review.create!(title: 'U18T & FOURTÉ – TIA PRODUCTS UPDATE',
 	content: '<p>We have some very exciting news to announce: our <a href="https://www.64audio.com/apex">apex technology</a> is now officially patent pending!&nbsp;</p>
 	<hr><p>The <a href="https://www.64audio.com/product/1964-U18-Custom-In-Ear-Monitor">U18</a> and <a href="https://www.64audio.com/product/1964-tia-Fourte-Custom-In-Ear-Monitor">Fourté</a>&nbsp;aluminum shells have arrived and the colors look absolutely gorgeous; the&nbsp;shells are ready to be made into the worlds first 18 driver IEMs.</p>
