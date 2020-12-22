@@ -8,7 +8,9 @@
         <form>
             <input type="text" id="text-field" placeholder="Ban muon mua gi?">
             <input type="submit" id="search-button" value="Search">
+         
         </form>
+        
     </div>
     <div class="header-top-link">
         <ul>
@@ -16,4 +18,31 @@
             <li><a href="#"><i class="fas fa-shopping-cart"></i><br><span>Gio hang</span></a></li>
         </ul>
     </div>
+        <% if user_signed_in? %>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
+            <% else %>
+            <%= link_to "login", new_user_session_path %> 
+        <% end %>
 </div>
+
+<script type="text/javascript">
+	window.addEventListener('scroll', function(){
+        var userInfo = document.querySelector('.userInfo');
+        userInfo.classList.toggle('sticky', window.scrollY > 76);
+	});
+
+    var options = {
+    	url: function(phrase) {
+      		return "/laptops.json?q[title_cont]=" + phrase;
+    	},
+		getValue: "title",
+		template: {
+			type: "links",
+			fields: {
+				link: "url"
+			}
+		},
+  	};
+
+  	$("#autocomplete input").easyAutocomplete(options);
+</script>

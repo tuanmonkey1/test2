@@ -1,0 +1,7 @@
+<div class="review-contentBx">
+	<%= link_to(review_path(review)) do %>
+		<h2><%= review.title %></h2>
+	<% end %>
+	<span><%= l(review.created_at, locale: :en) %></span>
+	<p><%= review.description %></p>
+</div>
