@@ -14,15 +14,22 @@
     </div>
     <div class="header-top-link">
         <ul>
+            <li>
+                <% if user_signed_in? %>
+                    <%= link_to(destroy_user_session_path, method: :delete) do %> 
+                        <i class="fas fa-user"></i><br><span>Log out</span>
+                    <% end %>
+                <% else %>
+                    <%= link_to(new_user_session_path) do %> 
+                        <i class="fas fa-user"></i><br><span>Login</span>
+                    <% end %>
+                <% end %>
+            </li>
             <li><a href="#"><i class="fas fa-file-alt"></i><br><span>Tin tuc</span></a></li>
             <li><a href="#"><i class="fas fa-shopping-cart"></i><br><span>Gio hang</span></a></li>
+            
         </ul>
-    </div>
-        <% if user_signed_in? %>
-            <%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
-            <% else %>
-            <%= link_to "login", new_user_session_path %> 
-        <% end %>
+    </div>   
 </div>
 
 <script type="text/javascript">

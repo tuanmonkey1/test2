@@ -20,6 +20,10 @@ gem 'ransack'
 gem 'paginate'
 gem 'omniauth-google-oauth2'
 # gem 'google-api-client', require: 'google/api_client'
+gem 'font-awesome-sass', '~> 5.15.1'
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
 group :development, :test do
 gem 'mysql2'
 gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

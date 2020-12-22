@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users,
     controllers:{omniauth_callbacks: "users/omniauth_callbacks"}
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
     resources :users
   end
 
+  resources :products, only: [:show]
 
 end
 # as :user do

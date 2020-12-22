@@ -30,4 +30,12 @@ RailsAdmin.config do |config|
     delete
     show_in_app
   end
+
+  # config.model Product do
+  #    edit do
+  #      field :title
+  #      field :description, :ck_editor
+  #      field :model_id
+  #    end
+  # end
 end
