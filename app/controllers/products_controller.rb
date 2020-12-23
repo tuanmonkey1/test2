@@ -1,15 +1,19 @@
 class ProductsController < ApplicationController
 
-	before_action :set_product, only: [:show]
+  before_action :set_product, only: [:show]
 
-	def show
+  def show
 		
-	end
+  end
 
-	private
+  def index
+    @pagy, @products = pagy(Product.all.order(created_at: :desc))
+  end
 
-	def set_product
-		@product = Product.find(params[:id])
+  private
+
+    def set_product
+	  @product = Product.find(params[:id])
 	end
 
 end

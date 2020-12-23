@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 *
 {
     margin: 0;
@@ -94,14 +97,18 @@
     color: #fff;
     font-size: 14px;
 }
+.header-bg
+{
+    height: 124px;
+}
 .header
 {
     position: absolute;
     z-index: 10000;
-    top: 72px;
+    top: 84px;
     left: 0;
     width: 100%;
-    padding: 10px 20%;
+    padding: 10px 20% 0 20%;
     background-color: #333;
 }
 .header .menu{
@@ -581,3 +588,5 @@
   from {opacity: 0.4;} 
   to {opacity: 1;}
 }
+
+/* Review index */

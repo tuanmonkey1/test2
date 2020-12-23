@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :users
   end
 
-  resources :products, only: [:show]
+  resources :products, only: [:show, :index]
 
 end
 # as :user do

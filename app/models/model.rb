@@ -4,7 +4,6 @@ class Model < ApplicationRecord
 
   validates :name, presence: true
 
-  scope :macbook, ->{ where(brand_id: 1) }
+  enum brand_id: { macbook: 1, surface: 2, dell: 3, razer: 4, asus: 5, lg: 6, hp: 7, acer: 8, lenovo: 9, msi: 10 }
 
-  scope :dell, ->{ where(brand_id: 3) }
 end
