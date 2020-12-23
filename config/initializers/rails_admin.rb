@@ -15,19 +15,17 @@ RailsAdmin.config do |config|
     new
     export
     bulk_delete
-
-    # show mac dinh cua rails admin se khong dc dung trong show store, nhung van duoc dung trong show book
-    show do
-      except Store
-    end
-
-    # phan show cua store se duoc custom nhung khong anh huong den show cua book
-    show_store do
-      only Store
-    end
-
     edit
     delete
     show_in_app
+  end
+
+  config.model Product do
+     edit do
+       # field :title
+       include_fields :title, :description, :model
+       field :description, :ck_editor
+       # field :model_id
+     end
   end
 end

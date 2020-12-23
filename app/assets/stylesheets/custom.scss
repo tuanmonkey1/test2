@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 *
 {
     margin: 0;
@@ -94,14 +97,18 @@
     color: #fff;
     font-size: 14px;
 }
+.header-bg
+{
+    height: 124px;
+}
 .header
 {
     position: absolute;
     z-index: 10000;
-    top: 72px;
+    top: 84px;
     left: 0;
     width: 100%;
-    padding: 10px 20%;
+    padding: 10px 20% 0 20%;
     background-color: #333;
 }
 .header .menu{
@@ -249,7 +256,7 @@
 }
 .home-content
 {
-    margin-top: 110px;
+    margin-top: 0px;
     width: 100%;
     background-color: #f3f3f3;
     padding: 0 20%;
@@ -477,7 +484,6 @@
 {
     width: 32%;
     min-width: 358px;
-    height: 320px;
     padding: 15px;
     background-color: #fff;
     margin: 5px;
@@ -488,14 +494,22 @@
                     -3px -3px 5px rgba(0,0,0,0.1);
     }
 }
-.home-content .content .lap-content .lap-contentBx h3
+.home-content .content .lap-content .lap-contentBx a
+{
+    text-decoration: none;
+    color: #333;
+    &:hover{
+        text-decoration: none;
+    }
+}
+.home-content .content .lap-content .lap-contentBx a .lap-contentBx-in h3
 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: bold;
     color: #333333;
 }
-.home-content .content .lap-content .lap-contentBx p
+.home-content .content .lap-content .lap-contentBx a .lap-contentBx-in p
 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
@@ -503,12 +517,12 @@
     color: #dc3545;
     line-height: 40px;
 }
-.home-content .content .lap-content .lap-contentBx .lap-img
+.home-content .content .lap-content .lap-contentBx a .lap-contentBx-in .lap-img
 {
     width: 100%;
     height: 230px;
 }
-.home-content .content .lap-content .lap-contentBx .lap-img img
+.home-content .content .lap-content .lap-contentBx a .lap-contentBx-in .lap-img img
 {
     width: 100%;
     height: 100%;
@@ -574,3 +588,5 @@
   from {opacity: 0.4;} 
   to {opacity: 1;}
 }
+
+/* Review index */
