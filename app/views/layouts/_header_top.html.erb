@@ -5,38 +5,37 @@
         <% end %>
     </div>
     <div class="header-search-field">
-        <form>
-            <input type="text" id="text-field" placeholder="Ban muon mua gi?">
+        <form method="get" action="/products">
+            <input name="title" type="text" id="text-field" placeholder="Ban muon mua gi?">
             <input type="submit" id="search-button" value="Search">
-         
         </form>
-        
+
     </div>
     <div class="header-top-link">
         <ul>
             <li>
                 <% if user_signed_in? %>
-                    <%= link_to(destroy_user_session_path, method: :delete) do %> 
+                    <%= link_to(destroy_user_session_path, method: :delete) do %>
                         <i class="fas fa-user"></i><br><span>Log out</span>
                     <% end %>
                 <% else %>
-                    <%= link_to(new_user_session_path) do %> 
-                        <i class="fas fa-user"></i><br><span>Login</span>
+                    <%= link_to("#", id: "js-click-login") do %>
+                         <i class="fas fa-user"></i><br><span>Log in</span>
                     <% end %>
                 <% end %>
             </li>
             <li><a href="#"><i class="fas fa-file-alt"></i><br><span>Tin tuc</span></a></li>
             <li><a href="#"><i class="fas fa-shopping-cart"></i><br><span>Gio hang</span></a></li>
-            
-        </ul>
-    </div>   
-</div>
 
+        </ul>
+    </div>
+</div>
+<%= render "layouts/login_form" %>
 <script type="text/javascript">
 
     var options = {
     	url: function(phrase) {
-      		return "/laptops.json?q[title_cont]=" + phrase;
+      		return "/products.json?q[title_cont]=" + phrase;
     	},
 		getValue: "title",
 		template: {
@@ -47,5 +46,5 @@
 		},
   	};
 
-  	$("#autocomplete input").easyAutocomplete(options);
+  	$("#text-field").easyAutocomplete(options);
 </script>

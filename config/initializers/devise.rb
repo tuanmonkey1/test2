@@ -309,8 +309,6 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
   # config.omniauth :google_oauth2, ENV['GOOGLE_OAUTH2_APP_ID'], ENV['GOOGLE_OAUTH2_APP_SECRET'], scope: "email,profile,offline", prompt: "consent"
-  config.omniauth :google_oauth2,  "338654716764-rcssbofhava4uj6lfffdinsnao8ps19k.apps.googleusercontent.com", "mwApUYqIk62t2DAWIX4e-sG4", {}
-  config.omniauth :instagram, ENV['INSTAGRAM_APP_ID'], ENV['INSTAGRAM_APP_SECRET']
-  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: "email"
-  config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET']
+  config.omniauth :google_oauth2,  "464254897025-166hv3fvuosc34i1pi51kd4g4fck6gtq.apps.googleusercontent.com", "kOZsGd_0ZXiSkSaXQ5CTZjSQ", {}
+  config.omniauth :facebook, "1029312154555994", "acf1a257422f5e7fe3d5462c6b7a1744", { scope: "email" }
 end

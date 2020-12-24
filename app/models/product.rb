@@ -5,6 +5,10 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :model_id, presence: true
 
+  def self.search_by_title(title)
+    where("LOWER(title) LIKE ?", "%#{title}%")
+  end
+
   scope :filter_by_macbook, ->{
   	joins(:model).merge(Model.macbook)
   }
