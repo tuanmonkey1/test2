@@ -3,7 +3,8 @@ class Model < ApplicationRecord
   has_many :products
 
   validates :name, presence: true
+  validates :brand_id, presence: true
 
-  enum brand_id: { macbook: 1, surface: 2, dell: 3, razer: 4, asus: 5, lg: 6, hp: 7, acer: 8, lenovo: 9, msi: 10 }
+  enum brand: { macbook: 1, surface: 2, dell: 3, hp: 4, razer: 5, acer: 6, asus: 7, lenovo: 8, lg: 9, msi: 10 }
 
 end
