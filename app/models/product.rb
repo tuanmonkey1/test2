@@ -3,6 +3,7 @@ class Product < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
+  validates :model_id, presence: true
 
   scope :filter_by_macbook, ->{
   	joins(:model).merge(Model.macbook)
