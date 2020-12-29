@@ -19,12 +19,15 @@ gem 'instagram'
 gem 'ransack'
 gem 'pagy'
 gem 'omniauth-google-oauth2'
+gem 'bootstrap-sass', '3.4.1' 
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'cancancan'
 # gem 'google-api-client', require: 'google/api_client'
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'bootstrap-sass', '3.4.1'
 group :development, :test do
 gem 'mysql2'
 gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -34,6 +37,7 @@ gem 'web-console', '4.0.1'
 gem 'listen', '3.1.5'
 gem 'spring', '2.1.0'
 gem 'spring-watcher-listen', '2.0.1'
+
 end
 group :test do
 gem 'capybara', '3.28.0'
