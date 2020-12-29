@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
+
   belongs_to :model
+  has_many :prices, dependent: :destroy
 
   validates :title, presence: true
   validates :description, presence: true

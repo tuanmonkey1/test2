@@ -154,32 +154,32 @@
 
     <script type="text/javascript">
         var text = document.querySelector('#text');
-        let i = 1;
+        let t = 1;
         function changeColor() {
-            if (i == 1) {
+            if (t == 1) {
                 text.style.color = "red";
-                i = 2;
-                return i;
+                t = 2;
+                return t;
             }
-            else if (i == 2) {
+            else if (t == 2) {
                 text.style.color = "green";
-                i = 3;
-                return i;
+                t = 3;
+                return t;
             }
-            else if (i = 3) {
+            else if (t = 3) {
                 text.style.color = "yellow";
-                i = 4;
-                return i;
+                t = 4;
+                return t;
             }
-            else if (i = 4) {
+            else if (t = 4) {
                 text.style.color = "violet";
-                i = 5;
-                return i;
+                t = 5;
+                return t;
             }
             else {
                 text.style.color = "blue";
-                i = 1;
-                return i;
+                t = 1;
+                return t;
             };
         }
         window.setInterval(changeColor(), 500);

@@ -22,20 +22,40 @@
 				</div>
 				<div class="product-contentBx">
 					<form>
-						<p class="product-price">129.800.000</p>
-						<ul class="configuration-path">
-							<li><i class="fas fa-check-circle"></i>&nbsp;<span>Tình trạng</span> New 100%</li>
-							<li><i class="fas fa-check-circle"></i>&nbsp;<span>CPU</span> Intel® Core™ i9-8950HK 2.9Ghz (12MB Cache, up to 4.8GHz w/ Turbo Boost)</li>
-							<li><i class="fas fa-check-circle"></i>&nbsp;<span>Ram</span> 16GB DDR4 2666MHz</li>
-							<li><i class="fas fa-check-circle"></i>&nbsp;<span>Ổ cứng</span> 512GB SSD M.2 PCIe</li>
-							<li><i class="fas fa-check-circle"></i>&nbsp;<span>Màn hình</span> 15.6" UHD (3840x 2160) 60Hz IPS, 300-nits 72% color gamut, Narrow-Border - Epic Silver</li>
-							<li><i class="fas fa-check-circle"></i>&nbsp;<span>VGA</span> NVIDIA® GeForce GTX™ 1080 8GB GDDR5</li>
-						</ul>
+						<div class="product-price">
+							<% @prices.each do |price| %>
+								<span class="price"><%= price.price %></span>
+							<% end %>
+						</div>
+						<div class="detail">
+							<% @prices.each do |price| %>
+								<ul class="configuration-path">
+									<% price.configurations.each do |configuration| %>
+										<li><i class="fas fa-check-circle"></i>&nbsp;<span><%= configuration.name %></span>&nbsp;<%= configuration.content %></li>
+									<% end %>
+								</ul>
+							<% end %>
+						</div>
+						
 						<div class="configuration-pick">
 							<p>CẤU HÌNH</p>
-							<ul class="configuration-content">
-
-							</ul>
+							<div class="configuration-content">
+								<% index = 0 %>
+								<% @prices.each do |price| %>
+									<% index += 1 %>
+									<div class="configurationBx" id="configurationBx-<%= price.id %>" onclick="currentSlide(<%= index.to_s %>)">
+										<input type="radio" name="price" value="<%= price.id %>" id="configuration-<%= price.id %>" class="ra-dio">
+										<label for="configuration-<%= price.id %>">
+											<% price.configurations.each do |configuration| %>
+												<p class="configurations">
+													<span><%= configuration.name %></span>&nbsp;&nbsp;<%= configuration.content %>
+												</p>
+											<% end %>
+											<p class="configuration-price"><%= price.price %><p>
+										</label>
+									</div>
+								<% end %>
+							</div>
 						</div>
 						<div class="promotion-path">
 							<span class="promotion-title">
@@ -165,5 +185,47 @@
 	    	$("#more").css("visibility","visible");
 	    	$("#few").css("visibility","hidden");
 	  	});
+
+	  	$("input[type=radio][name=price]:first").attr('checked', 'checked');
+
+	  	// var p;
+	  	// var configurations = document.getElementsByClassName("configurations");
+	  	// for (p = 0; p < configurations.length; p++) {
+	  	// 	if (p > 1) {
+    //             configurations[p].style.display = "none";
+    //         }
+    //     }
 	});
 </script>
+
+<script type="text/javascript">
+        var radioIndex = 1;
+        showSlides(radioIndex);
+
+        function plusSlides(n) {
+            showSlides(radioIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(radioIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var confis = document.getElementsByClassName("configuration-path");
+            var prices = document.getElementsByClassName("price");
+            var configurationBxs = document.getElementsByClassName("configurationBx");
+            if (n > confis.length) { radioIndex = 1 }
+            if (n < 1) { radioIndex = confis.length }
+            for (i = 0; i < confis.length; i++) {
+                confis[i].style.display = "none";
+                prices[i].style.display = "none";
+            }
+            for (i = 0; i < configurationBxs.length; i++) {
+                configurationBxs[i].className = configurationBxs[i].className.replace(" choose", "");
+            }
+            confis[radioIndex - 1].style.display = "block";
+            prices[radioIndex - 1].style.display = "block";
+            configurationBxs[radioIndex - 1].className += " choose";
+        }
+    </script>
