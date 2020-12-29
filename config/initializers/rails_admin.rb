@@ -15,6 +15,7 @@ RailsAdmin.config do |config|
     new
     export
     bulk_delete
+    show
     edit
     delete
     show_in_app
@@ -23,7 +24,7 @@ RailsAdmin.config do |config|
   config.model Product do
      edit do
        # field :title
-       include_fields :title, :description, :model
+       include_fields :title, :description, :model, :prices
        field :description, :ck_editor
        # field :model_id
      end
